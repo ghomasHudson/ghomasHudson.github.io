@@ -1,0 +1,26 @@
+//- ----------------------------------
+//- ⚡️ BASE > MIXINS
+//- ----------------------------------
+
+//- Size shorthand
+
+@mixin size($width, $height: $width)
+    height: $height
+    width: $width
+
+
+//- Position shorthand
+
+@mixin position($position, $pos-y, $pos-x, $pos-y-value, $pos-x-value)
+    position: $position
+    #{$pos-y}: $pos-y-value
+    #{$pos-x}: $pos-x-value
+
+//- Better underlines
+//- adapted from "Decorative Text Underline" by Jonathan Neal
+//- https://codepen.io/jonneal/pen/PzGYEE
+
+@mixin underline($bg: $color-back, $color: currentColor, $position: -0.16em, $size: 2px)
+    box-shadow: inset 0 calc(#{$position} + #{$size}) 0 0 $bg, inset 0 $position 0 0 $color
+    text-decoration: none
+    text-shadow: 1px 1px $bg, 2px 1px $bg, -1px 1px $bg, -2px 1px $bg, 2px -1px $bg, -2px 0 $bg

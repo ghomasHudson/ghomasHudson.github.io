@@ -1,0 +1,114 @@
+//- ----------------------------------
+//- ⚡️ COMPONENTS
+//- ----------------------------------
+
+//- Buttons
+
+.c-button
+    background: $color-front
+    color: $color-back
+    padding: 2.5rem 2.5rem 2.75rem 2.5rem
+    line-height: 1
+    border-radius: 2em
+    transition: transform 0.1s ease
+    display: inline-block
+    border-bottom: 0
+
+    &:hover
+        transform: scale(1.05)
+
+
+
+.c-embed
+    position: relative
+    height: 0
+    padding-bottom: (100% * 9 / 16)
+
+    &__iframe
+        +position(absolute, top, left, 0, 0)
+        +size(100%)
+
+//- Icon
+
+.c-icon
+    display: inline-block
+    vertical-align: middle
+
+//- Lists
+
+ul,ol
+    list-style-position: inside
+ul
+    list-style: none
+ul li::before
+    color: var(--theme)
+    content: "\25AA"
+    padding-right: 1.1225em
+    position: relative
+    top: 0em
+
+
+.footnotes
+    border-top: 1px solid #ccc
+
+.footnotes ol
+    list-style-position: outside !important
+.footnotes li,.footnotes p
+    font-size: 1.5rem !important
+.footnotes p
+    margin-top: 1rem !important
+    margin-bottom: 1rem !important
+//- Tables
+
+.c-table
+    display: inline-block
+    overflow-x: auto
+    width: auto
+    -webkit-overflow-scrolling: touch
+
+    &__row
+        border-style: solid
+        border-width: 2px 0
+
+        &:last-child
+            border-bottom: none
+
+        &:first-child
+            border-top: none
+
+    &__cell
+        padding: 1rem
+
+//- Quotes
+
+.c-quote
+    padding-left: 2.5rem
+    margin-left: -2.5rem / 2
+    border-left: 6px solid $color-subtle-dark
+    border-left-color: var(--theme)
+
+    &__footer:before
+        +size(0.75em)
+        content: ""
+        display: inline-block
+        background: $color-subtle-dark
+        background: var(--theme)
+        margin-right: 1rem
+
+//- Inline list
+
+.c-inline-list > *
+    display: inline
+    line-height: 2
+
+    &:not(:last-child)
+        margin-right: 2rem
+
+//- Profile image
+
+.c-profile
+    +size(160px)
+    border-radius: 50%
+    border: 5px solid $color-back
+    float: right
+    margin: 5rem 0 1rem 2rem

@@ -1,0 +1,203 @@
+---
+layout: default
+title: Blog
+bannerImg: /assets/img/techPattern.jpg
+---
+
+
+<style>
+
+.o-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    grid-column-gap: 5rem
+}
+
+@supports(display: grid) {
+    .o-grid {
+        display:grid
+    }
+}
+
+.o-grid--narrow {
+    grid-column-gap: 3rem
+}
+
+.o-grid>* {
+    min-width: 0
+}
+
+@media(min-width: 52em) {
+    .o-grid {
+        grid-template-columns:repeat(2,1fr)
+    }
+
+    .o-grid>* {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 2rem);
+        flex: 0 0 calc(50% - 2rem)
+    }
+}
+
+@media(min-width: 64em) {
+    .o-grid {
+        grid-template-columns:repeat(3,1fr)
+    }
+
+    .o-grid>* {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.33333% - 4rem);
+        flex: 0 0 calc(33.33333% - 4rem)
+    }
+
+    .o-grid--half>*,.o-grid--blog>* {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 2rem);
+        flex: 0 0 calc(50% - 2rem)
+    }
+
+    .o-grid--half {
+        grid-template-columns: repeat(2,1fr)
+    }
+
+    .o-grid--profile {
+        grid-template-columns: 225px 1fr
+    }
+
+    .o-grid--profile>*:first-child {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 225px;
+        flex: 0 0 225px;
+        height: auto
+    }
+}
+
+
+.l-wrapper {
+    padding: 8rem 3rem .25rem;
+}
+
+.l-wrapper--article {
+    padding-top: 3rem;
+    margin-bottom: 2rem
+}
+
+@media(min-width: 64em) {
+    .l-wrapper {
+        padding-left:6rem;
+        padding-right: 6rem
+    }
+
+    .l-wrapper--page {
+        padding-right: 15rem
+    }
+
+    .l-wrapper--article {
+        padding: 4rem 27.5rem 0 6rem
+    }
+
+    .l-wrapper--article-footer {
+        margin-top: 7.5rem;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+        background: rgba(148,158,155,.2)
+    }
+}
+
+.card {
+    display: grid;
+    grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
+    grid-template-rows: min-content 1fr min-content;
+    background: #fff;
+    position: relative;
+    -webkit-transition: -webkit-transform .1s ease;
+    transition: -webkit-transform .1s ease;
+    transition: transform .1s ease;
+    transition: transform .1s ease,-webkit-transform .1s ease;
+    margin-bottom: 3.4rem;
+    background-color: #fff
+}
+
+.card:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    z-index: 0;
+    -webkit-box-shadow: 2px 2px 30px #949e9b;
+    box-shadow: 2px 2px 30px #949e9b;
+    opacity: .1;
+    -webkit-transition: opacity .1s ease;
+    transition: opacity .1s ease;
+    pointer-events: none
+}
+
+.card:hover,.card:active,.card:focus {
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px)
+}
+
+.card:hover:before,.card:active:before,.card:focus:before {
+    opacity: 1
+}
+
+.card__image {
+    padding-bottom: 50%;
+    background-size: cover;
+    background-position: top center
+}
+
+@media(min-width: 64em) {
+    .card--featured {
+        grid-column:span 2
+    }
+}
+
+.card__body {
+    padding: 1.5rem !important
+}
+
+.u-t-xs {
+    font-size: .95rem;
+    line-height: 1.35
+}
+
+.u-strong {
+    font-weight: 700
+}
+
+</style>
+
+<div class="l-wrapper">
+<div class="o-grid o-grid--narrow o-grid--blog u-b-lg ">
+{% for post in site.posts %}
+	<article class="card u-b-md card{% if post.featured %}--featured{% endif %}">
+		<header>
+			<a href="{{ post.url }}">
+				<div style="background-image: url('{{ post.bannerImg }}');--image-align:center" class="card__image"></div>
+			</a>
+		</header>
+		<div class="card__body">
+			<h2 class="u-h3 u-b-sm u-b-sm">
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</h2>
+			{{ post.date | date_to_string }}
+			<div class="u-t-sm"><a href="{{ post.url }}">
+				{{ post.excerpt }}
+			</a></div>
+	</article>
+{% endfor %}
+</div>
+</div>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" style="--theme:#305864">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/style.css">
+  
+
+<!-- Add support for Math -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+
+  </head>
+  <body>
+
+
+<article>
+  <header style="background-image: url('{{page.bannerImg}}');--image-align:center" class="mainHeader">
+
+    <!-- <menu class="l-nav"><a href="/" aria-label="Home"><img src="../assets/img/headshot.jpg" class="l-nav__logo"></a></menu>
+ -->
+
+    <h1 class="l-heading u-heading-0">
+      <span class="l-heading__text u-text-upper">{{ page.title }}</span><br>
+
+      {% if page.tags != null and page.date != null%}
+      <span class="l-heading__sub u-text-meta u-text-upper u-text-normal">
+        <strong>{{page.tags}}</strong> · 
+        <time>{{ page.date | date_to_string }}</time>
+      </span>
+      {% endif %}
+    </h1>
+
+    <!-- <a href="#" target="_blank" rel="noopener nofollow" class="l-header__credit.u-text.u-text">Freepik</a> -->
+
+  </header>
+    {{ content }}
+
+<div style="--teaser-bg: #eee; --teaser-color: #111" class="l-teaser"><div class="l-teaser__content"><img src="/assets/img/headshot.jpg" alt="" class="c-profile"><h2 class="u-heading-2"><div class="u-text-meta u-text-upper u-text-normal u-color-theme"> About the author</div> Thomas Hudson</h2>
+
+<p class="u-block--small u-text u-text--small">
+  I'm a programmer/data scientist working in the intersection of Security and Natural Language Processing.
+</p>
+<p class="u-block--small u-text u-text--small">
+  I'm currently studying for a PhD in Computer Science at Newcastle University
+</p>
+<div class="c-inline-list">
+  {% include social.html %}
+    </div></div></div>
+
+
+    <footer> 
+      <nav class="c-inline-list u-block u-text-meta u-text-meta--small">
+        <span>&copy; 2018</span>
+        <a href="blog">Blog</a>
+        <a href="cv">About Me</a>
+        <a target="_blank" href="https://github.com/ghomasHudson/ghomasHudson.github.io">Source</a></nav>
+      <div class="c-inline-list u-block">{% include social.html %}
+</div>
+    </footer>
+
+
+<!-- Goo filter -->
+<svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix><feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite></filter></defs></svg>
+
+
+  </body>
+</html>

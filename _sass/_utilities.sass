@@ -1,0 +1,92 @@
+//- ----------------------------------
+//- ⚡️ UTILITIES
+//- ----------------------------------
+
+//- Text
+
+.u-text
+    font: 1.9rem/#{1.5} $font-primary
+
+    &--small,
+        font-size: 1.65rem
+        line-height: 1.5
+
+    &--tiny
+        font-size: 1.1rem
+
+.u-text-meta
+    font: 1.6rem/#{1.375} $font-tertiary
+
+    &--small
+        font-size: 1.3rem
+        color: $color-subtle-dark
+
+    &--large
+        font-size: 2rem
+        line-height: 1
+
+.u-text-code
+    font: 1.5rem/#{1.75} $font-code
+    font-variant-ligatures: none
+    text-shadow: none  // reset shadow from links etc.
+    -webkit-font-smoothing: subpixel-antialiased
+    -moz-osx-font-smoothing: auto
+
+.u-text-strong
+    font-weight: bold
+
+.u-text-normal
+    font-weight: normal
+
+.u-text-italic
+    font-style: italic
+
+.u-text-center
+    text-align: center
+
+.u-text-right
+    text-align: right
+
+.u-text-upper
+    text-transform: uppercase
+
+.u-text-capital
+    text-transform: capitalize
+
+.u-text-inactive
+    opacity: 0.5
+
+.u-color-theme
+    color: var(--theme)
+
+//- Headlines
+
+%heading
+    font-family: $font-secondary
+    font-weight: bold
+    line-height: 1.25
+    padding: 20px 0
+
+@each $level, $font-size in (0: 5.4, 1: 5.2, 2: 3.8, 3: 2.8, 4: 2.2)
+    h#{$level},
+    .u-heading-#{$level}
+        @extend %heading
+        font-size: #{$font-size}rem
+
+//- Block
+
+.u-block
+    margin-bottom: 2rem
+    margin-top: 3rem
+
+    &--small
+        margin-bottom: 2.5rem
+
+    &--tiny
+        margin-bottom: 1rem
+
+.u-nowrap
+    white-space: nowrap
+
+.u-hidden
+    display: none

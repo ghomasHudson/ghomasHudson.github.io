@@ -1,0 +1,263 @@
+//- ----------------------------------
+//- ⚡️ LAYOUT
+//- ----------------------------------
+
+//- HTML
+
+html
+    @media (min-width: #{$breakpoint})
+        font-size: 10px
+
+    @media (max-width: #{$breakpoint})
+        font-size: 9px
+
+    @media (max-width: #{$breakpoint / 2})
+        font-size: 7px
+
+//- Body
+
+body
+    animation: fadeIn 0.6s
+    color: $color-front
+    background: $color-back
+
+// Text
+
+p
+    @extend .u-block, .u-text
+
+li,dl,table
+    @extend .u-text
+ul
+    list-style-type: square
+
+//- Links
+
+p, .c-list, figcaption, td
+    a:not(.c-button):not(.u-no-link)
+        +underline(var(--teaser-bg, $color-back), var(--theme))
+
+a[href]:focus
+    outline: 2px dotted var(--theme, #111)
+
+// Selected Text
+
+::selection
+    background: $color-front
+    color: $color-back
+    text-shadow: none
+
+//- Animations
+
+@keyframes fadeIn
+    from
+        opacity: 0
+
+    to
+        opacity: 1
+
+//- Teaser
+
+.l-teaser
+    --teaser-color: $color-back
+    --teaser-bg: $color-front
+
+    $teaser-bg-default: $color-subtle-dark
+    $teaser-color-default: $color-back
+    $teaser-bg: var(--teaser-bg, $teaser-bg-default)
+    $teaser-color: var(--teaser-color, $teaser-color-default)
+
+    background: $teaser-bg-default
+    background: $teaser-bg
+    color: $teaser-color-default
+    color: $teaser-color
+    display: block
+
+    &[href]:focus
+        outline: 0
+        opacity: 0.85
+
+    &__content
+        width: $content-width
+        max-width: 100%
+        margin: 0 auto
+        padding: 3rem 1rem 4rem
+
+    &__label
+        background: $teaser-color-default
+        background: $teaser-color
+        color: $teaser-bg-default
+        color: $teaser-bg
+        display: inline-block
+        transform: rotate(-1deg) translate3d(-1rem, 0.5rem, 0)
+        padding: 0.25rem 1rem
+
+//- Header
+
+.mainHeader,
+section
+    display: grid
+    grid-template-columns: minmax($logo-width, 1fr) minmax(0, $content-width) minmax(0, 1fr)
+    grid-column-gap: 2rem
+
+    @media(max-width: #{$breakpoint})
+        grid-template-columns: 0 minmax(0, 100%) 0
+
+.mainHeader
+    grid-row: 1
+    grid-template-rows: $logo-width 1fr
+    background-color: var(--theme)
+    background-position: var(--image-align)
+    background-size: cover
+    color: $color-back
+    position: relative
+    padding: $logo-width * 1.5 0 8rem
+    margin-bottom: 2rem
+
+    @supports(display: grid)
+        padding-top: 2rem
+
+    &__credit
+        +position(absolute, bottom, right, 2rem, 2rem)
+        background: $color-back
+        padding: 1px 1rem 2px
+        transform-origin: 100% 100%
+        transform: rotate(-90deg) translateX(100%)
+        border-radius: 1em
+        color: $color-front
+
+        &:before
+            content: "\00a9" " "
+
+.l-heading
+    grid-column: 2
+    grid-row: 2
+    margin: 0 auto
+    width: $content-width
+
+    @supports(display: grid)
+        width: auto
+
+    &__sub
+        display: inline-block
+
+    &__text
+        margin-right: 1.5rem
+
+    &__text,
+    &__sub
+        filter: url("#goo")
+        background: $color-back
+        color: $color-front
+        box-decoration-break: clone
+        padding: 7px 13px 6px 13px
+
+//- Navigation
+
+.l-nav
+    +position(fixed, top, left, 2rem, 2rem)
+    color: $color-back
+    filter: url("#goo")
+    z-index: 30
+
+    @media(max-width: #{$breakpoint})
+        +position(relative, top, left, 0, 0)
+        grid-column: 2
+        filter: none
+
+    &:hover &__list,
+    &:hover &__list__item
+        transform: none
+        width: auto
+
+    &__logo
+        +size($logo-svg-width)
+        position: relative
+        margin: 1rem
+        background: $color-front
+        border-radius: 50%
+        padding: 10px 10px 0 10px
+        z-index: 20
+
+    &__menu
+        +position(absolute, top, left, calc(50% - 1em), $logo-width)
+        white-space: nowrap
+
+    &__list
+        position: relative
+        width: 0  // hack for Safari
+        transform: translateX(-$logo-width)
+        transition: transform 0.35s ease-in
+        z-index: 10
+
+        @media(max-width: #{$breakpoint})
+            transform: none
+            z-index: 30
+
+        &__item
+            display: inline-block
+            font-weight: bold
+            background: $color-front
+            transform: scale(0)
+            transition: transform 0.5s ease-out
+
+            &__link
+                padding: 0 1.25rem 2px
+
+            &:not(:last-child)
+                margin-right: 1.25rem
+
+            @media(max-width: #{$breakpoint})
+                transform: none
+                border-radius: 1em
+
+//- Article
+
+article
+    display: grid
+    position: relative
+
+section
+    grid-row: 2
+    margin-top: 5rem
+    padding: 0 2rem 4rem
+
+.post
+    grid-column: 2
+    padding-bottom: 3rem
+    margin: 0 calc(50% - #{$content-width / 2})
+
+    @supports(display: grid)
+        margin: 0
+
+blockquote
+    background: #f9f9f9
+    border-left: 5px solid var(--theme)
+    margin: 1.5em 10px
+    padding: 0.5em 15px
+    quotes: "\201C""\201D""\2018""\2019"
+blockquote:before
+    color: #ccc
+    content: open-quote
+    font-size: 4em
+    line-height: 0.1em
+    margin-right: 0.25em
+    vertical-align: -0.4em
+blockquote p
+    display: inline
+
+
+
+//- Footer
+
+footer
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-flow: row wrap
+    position: relative
+    background: $color-back
+    padding: 5rem 7.5rem 3rem
+    width: 100%
+
+
