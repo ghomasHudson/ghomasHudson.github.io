@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Post 222'
+title: 'Template post'
 bannerImg: /assets/img/grunge2.jpg
 featured: false
 tags: code
