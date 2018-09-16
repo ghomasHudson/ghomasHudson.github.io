@@ -183,7 +183,7 @@ bannerImg: /assets/img/techPattern.jpg
 <div class="l-wrapper">
 <div class="o-grid o-grid--narrow o-grid--blog u-b-lg ">
 {% for post in site.posts %}
-	<article class="card u-b-md card{% if post.featured %}--featured{% endif %}">
+	<article class="card u-b-md card{% if post.featured %}--featured{% endif %}" style="--theme:{{post.theme}}">
 		<header>
 			<a href="{{ post.url }}">
 				<div style="background-image: url('{{ post.bannerImg }}');--image-align:center" class="card__image"></div>
