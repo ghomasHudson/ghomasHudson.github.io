@@ -1,9 +1,10 @@
 ---
 layout: post
 title: 'pyWebcamSteg: An annoymising proxy through your webcam'
-bannerImg: /assets/img/grunge2.jpg
+bannerImg: /assets/img/pyWebcamSteg/banner.jpg
 featured: false
 tags: Security
+theme: '#fe7855'
 ---	
 ExploitDB's [Google Hacking Database (GHDB)](https://www.exploit-db.com/google-hacking-database/) is a great resource for finding cool search queries for Google which lets you find public things on the web which should not under any circumstances be public.
 
@@ -54,3 +55,4 @@ This system allows the request from the client to be hidden in a way which doesn
 
 ---
 The code for this project can be found at on [Github](https://github.com/ghomasHudson/pyWebcamSteg).
+

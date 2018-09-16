@@ -1,4 +1,12 @@
 
+
+code{
+  border-radius: 1em;
+  padding:1px 0.95rem 2px;
+  background: var(--theme);
+  color: #fff;
+}
+
 /* Add padding to the left of the code block */
 div .highlight { padding: 10px; font-size:120%}
 
