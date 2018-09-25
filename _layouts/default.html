@@ -36,7 +36,6 @@ MathJax.Hub.Config({
 
     <h1 class="l-heading u-heading-0">
       <span class="l-heading__text u-text-upper">{{ page.title }}</span><br>
-
       {% if page.tags != null and page.date != null%}
       <span class="l-heading__sub u-text-meta u-text-upper u-text-normal">
         <strong>{{page.tags}}</strong> · 
@@ -45,8 +44,9 @@ MathJax.Hub.Config({
       {% endif %}
     </h1>
 
-    <!-- <a href="#" target="_blank" rel="noopener nofollow" class="l-header__credit.u-text.u-text">Freepik</a> -->
-
+    {% if page.bannerCredit != null %}
+    <a href="#" target="_blank" rel="noopener nofollow" class="mainHeader__credit">{{page.bannerCredit}}</a>
+    {% endif %}
   </header>
     {{ content }}
 
@@ -66,8 +66,9 @@ MathJax.Hub.Config({
     <footer> 
       <nav class="c-inline-list u-block u-text-meta u-text-meta--small">
         <span>&copy; 2018</span>
-        <a href="blog">Blog</a>
-        <a href="cv">About Me</a>
+        <a href="/">ghomasHudson.github.io</a>
+        <a href="/blog">Blog</a>
+        <a href="/cv">CV</a>
         <a target="_blank" href="https://github.com/ghomasHudson/ghomasHudson.github.io">Source</a></nav>
       <div class="c-inline-list u-block">{% include social.html %}
 </div>

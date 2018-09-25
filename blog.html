@@ -195,7 +195,7 @@ bannerImg: /assets/img/techPattern.jpg
 			</h2>
 			{{ post.date | date_to_string }}
 			<div class="u-t-sm"><a href="{{ post.url }}">
-				{{ post.excerpt }}
+				<p>{{ post.excerpt | strip_html | normalize_whitespace}}&hellip;</p>
 			</a></div>
 	</article>
 {% endfor %}
