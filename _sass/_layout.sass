@@ -154,10 +154,10 @@ section
 
 //- Navigation
 
+.l-nav ul
+    list-style: none
 .l-nav
     +position(fixed, top, left, 2rem, 2rem)
-    color: $color-back
-    filter: url("#goo")
     z-index: 30
 
     @media(max-width: #{$breakpoint})
@@ -165,51 +165,44 @@ section
         grid-column: 2
         filter: none
 
-    &:hover &__list,
-    &:hover &__list__item
-        transform: none
-        width: auto
-
-    &__logo
-        +size($logo-svg-width)
+    &__identity
+        //@extend %heading
+        font-family: #{$font-primary}
+        font-weight: bold
+        font-size: 2rem
+        background: black
+        color: white
         position: relative
-        margin: 1rem
+        filter: url("#goo")
+        //margin: 1rem
         background: $color-front
-        border-radius: 50%
-        padding: 10px 10px 0 10px
+        padding: 7px 13px 6px 13px
         z-index: 20
-
-    &__menu
-        +position(absolute, top, left, calc(50% - 1em), $logo-width)
-        white-space: nowrap
 
     &__list
         position: relative
-        width: 0  // hack for Safari
-        transform: translateX(-$logo-width)
-        transition: transform 0.35s ease-in
+        top: 1rem
         z-index: 10
+        text-align: center
 
         @media(max-width: #{$breakpoint})
-            transform: none
             z-index: 30
 
         &__item
             display: inline-block
+            filter: url("#goo")
             font-weight: bold
             background: $color-front
-            transform: scale(0)
-            transition: transform 0.5s ease-out
+            padding: 7px 13px 6px 13px
+            list-style-type: none
+            font-size: 1.2rem
+            margin: auto
 
-            &__link
-                padding: 0 1.25rem 2px
-
-            &:not(:last-child)
-                margin-right: 1.25rem
 
             @media(max-width: #{$breakpoint})
                 transform: none
                 border-radius: 1em
+
 
 //- Article
 
