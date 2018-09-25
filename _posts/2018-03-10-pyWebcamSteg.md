@@ -6,7 +6,7 @@ featured: false
 tags: Security
 theme: '#fe7855'
 ---	
-ExploitDB's [Google Hacking Database (GHDB)](https://www.exploit-db.com/google-hacking-database/) is a great resource for finding cool search queries for Google which lets you find public things on the web which should not under any circumstances be public.
+ExploitDB's [Google Hacking Database (GHDB)](https://www.exploit-db.com/google-hacking-database/) is a great resource for finding sneaky search queries for Google which lets you find public things on the web which probably shouldn't be public
 
 One search query which really stuck out to me was `intitle:webcam 7 inurl:8080 -intext:8080` which shows you simple pages for public webcams:
 
