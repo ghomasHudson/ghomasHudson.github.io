@@ -1,6 +1,6 @@
 
 
-code{
+:not(.highlight) > code{
   border-radius: 1em;
   padding:1px 0.95rem 2px;
   background: var(--theme);
