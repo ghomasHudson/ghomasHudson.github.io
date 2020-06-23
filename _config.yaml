@@ -12,6 +12,8 @@ kramdown:
 title: Thomas Hudson
 include:
   - .well-known
+keep_files:
+    - "server"
 defaults:
   -
     scope:
