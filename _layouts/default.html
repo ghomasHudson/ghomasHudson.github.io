@@ -10,7 +10,7 @@
       {% endif %}
     </title>
     <link rel="stylesheet" href="/style.css">
-  
+
 
 <!-- Add support for Math -->
 <script type="text/x-mathjax-config">
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
       <span class="l-heading__text u-text-upper">{{ page.title }}</span><br>
       {% if page.tags != null and page.date != null%}
       <span class="l-heading__sub u-text-meta u-text-upper u-text-normal">
-        <strong>{{page.tags}}</strong> · 
+        <strong>{{page.tags}}</strong> ·
         <time>{{ page.date | date_to_string }}</time>
       </span>
       {% endif %}
@@ -55,7 +55,12 @@ MathJax.Hub.Config({
     <a href="#" target="_blank" rel="noopener nofollow" class="mainHeader__credit">{{page.bannerCredit}}</a>
     {% endif %}
   </header>
+
+
     {{ content }}
+
+
+
 
 <div style="--teaser-bg: #eee; --teaser-color: #111" class="l-teaser"><div class="l-teaser__content"><img src="/assets/img/headshot.jpg" alt="" class="c-profile"><h2 class="u-heading-2"><div class="u-text-meta u-text-upper u-text-normal u-color-theme"> About the author</div> Thomas Hudson</h2>
 
@@ -63,14 +68,14 @@ MathJax.Hub.Config({
   I'm a programmer/data scientist working in the intersection of Security and Natural Language Processing.
 </p>
 <p class="u-block--small u-text u-text--small">
-  I'm currently studying for a PhD in Computer Science at Newcastle University
+  I'm currently studying for a PhD in Computer Science at Durham University
 </p>
 <div class="c-inline-list">
   {% include social.html %}
     </div></div></div>
 
 
-    <footer> 
+    <footer>
       <nav class="c-inline-list u-block u-text-meta u-text-meta--small">
         <span>&copy; 2018</span>
         <a href="/">ghomasHudson.github.io</a>
@@ -92,7 +97,7 @@ var links = document.links;
 for (var i = 0, linksLength = links.length; i < linksLength; i++) {
    if (links[i].hostname != window.location.hostname) {
        links[i].target = '_blank';
-   } 
+   }
 }
 </script>
 
