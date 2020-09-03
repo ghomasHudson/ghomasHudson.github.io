@@ -33,15 +33,10 @@ Volunteer Assistant Tennis Coach - 2008 – 2012
 
 ## Education ##
 
-### Newcastle University ###
-*Computer Science - 2014-2018*
-
-PhD COMPUTER SCIENCE
+### Durham University ###
+PhD COMPUTER SCIENCE -
 
 Currently working on projects in Natural Language Processing and Machine Learning.
-
-### Durham University ###
-*Computer Science - 2014-2018*
 
 MEng COMPUTER SCIENCE
 
