@@ -4,6 +4,6 @@ title: 'Thomas Hudson'
 bannerImg: /assets/img/techPattern.jpg
 ---
 
-I'm a programmer/data scientist working in the intersection of Security and Natural Language Processing. I'm currently studying for a PhD in Computer Science at Durham University
+Machine learning researcher with a focus on both developing fundamental AI methods alongside their applications to real-world applications in healthcare settings.
 
 Check out my [Blog](/blog) or [CV](/cv).
